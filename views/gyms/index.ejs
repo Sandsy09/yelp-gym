@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gyms</title>
+</head>
+<body>
+    <h1>All Campgrounds</h1>
+    <div>
+        <a href="/gyms/new">New Gym</a>
+    </div>
+
+    <ul>
+        <% for (let gym of gyms) { %>
+            <a href="/gyms/<%= gym._id %>"><li><%= gym.title %></li></a>
+        <% } %>
+    </ul>
+    
+</body>
+</html>

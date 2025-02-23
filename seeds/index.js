@@ -20,7 +20,8 @@ const seedDB = async () => {
         const rand1000 = Math.floor(Math.random() * 1000)
         const gym = new Gym({
             location: `${cities[rand1000].city}, ${cities[rand1000].state}`,
-            title: `${randArrayChoice(descriptors)} ${randArrayChoice(places)}`
+            title: `${randArrayChoice(descriptors)} ${randArrayChoice(places)}`,
+            price: Math.floor(Math.random() * (50 - 10) + 10) - 0.01
         })
         await gym.save();
     }
