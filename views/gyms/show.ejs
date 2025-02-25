@@ -1,22 +1,25 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><%= gym.title %></title>
-</head>
-<body>
-    <h1><%= gym.title %></h1>
-    <h2><%= gym.location %></h2>
-    <h2><%= gym.price %></h2>
-
-    <footer>
-        <a href="/gyms">All Gyms</a>
-        <a href="/gyms/<%= gym.id %>/edit">Edit Gym</a>
-        <form action="/gyms/<%= gym.id %>?_method=DELETE" method="post">
-            <button>Delete Gym</button>
-        </form>
-    </footer>
-    
-</body>
-</html>
+<% layout('layouts/boilerplate') %>
+ 
+<div class="row">
+    <div class="col-6 offset-3">
+        <div class="card mb-3">
+            <img src="<%= gym.image %>" class="card-img-top" alt="Gym Image">
+            <div class="card-body">
+                <h5 class="card-title"><%= gym.title %></h5>
+                <p class="card-text"><%= gym.description %></p>
+            </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item text-muted"><%= gym.location %></li>
+                    <li class="list-group-item">£<%= gym.price %>/month</li>
+            <div class="card-body">
+                <a href="/gyms/<%= gym.id %>/edit" class="card-link btn btn-info">Edit Gym</a>
+                <form class="d-inline" action="/gyms/<%= gym.id %>?_method=DELETE" method="POST">
+                    <button class="btn btn-danger">Delete Gym</button>
+                </form>
+            </div>
+            <div class="card-footer text-body-secondary">
+                2 days ago
+            </div>
+        </div>
+    </div>
+</div>

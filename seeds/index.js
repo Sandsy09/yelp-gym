@@ -21,6 +21,8 @@ const seedDB = async () => {
         const gym = new Gym({
             location: `${cities[rand1000].city}, ${cities[rand1000].state}`,
             title: `${randArrayChoice(descriptors)} ${randArrayChoice(places)}`,
+            image: `https://picsum.photos/400?random=${Math.random()}`,
+            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a diam ut neque posuere maximus a id elit. Phasellus ut imperdiet ligula. Sed vitae cursus.',
             price: Math.floor(Math.random() * (50 - 10) + 10) - 0.01
         })
         await gym.save();

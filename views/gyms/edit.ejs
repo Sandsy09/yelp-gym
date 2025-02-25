@@ -1,28 +1,52 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Edit Gym</title>
-</head>
-<body>
-    <h1>Edit Gym</h1>
+<% layout('layouts/boilerplate') %>
 
-    <form action="/gyms/<%= gym.id %>?_method=PUT" method="POST">
-        <div>
-            <label for="title">Title</label>
-            <input type="text" name="gym[title]" id="title" value="<%= gym.title %>">
-        </div>
-        <div>
-            <label for="location">Location</label>
-            <input type="text" name="gym[location]" id="location" value="<%= gym.location %>">
-        </div>
-        <div>
-            <label for="price">Price</label>
-            <input type="text" name="gym[price]" id="price" value="<%= gym.price %>">
-        </div>
-        <button>Update Gym</button>
-    </form>
-    
-</body>
-</html>
+<div class="row">
+    <h1 class="text-center">Edit Gym</h1>
+    <div class="col-6 offset-3">
+        <form class="validated-form" action="/gyms/<%= gym.id %>?_method=PUT" method="POST" novalidate>
+            <div class="mb-3">
+                <label class="form-label" for="title">Title</label>
+                <input class="form-control"type="text" name="gym[title]" id="title" value="<%= gym.title %>" required>
+                <div class="valid-feedback">
+                    Looks good!
+                </div>
+            </div>
+            <div class="mb-3">
+                <label class="form-label" for="location">Location</label>
+                <input class="form-control"type="text" name="gym[location]" id="location" value="<%= gym.location %>" required>
+                <div class="valid-feedback">
+                    Looks good!
+                </div>
+            </div>
+            <div class="mb-3">
+                <label class="form-label" for="image">Image URL</label>
+                <input class="form-control"type="text" name="gym[image]" id="image" value="<%= gym.image %>" required>
+                <div class="valid-feedback">
+                    Looks good!
+                </div>
+            </div>
+            <div class="mb-3">
+                <label class="form-label" for="description">Description</label>
+                <textarea class="form-control" type="text" name="gym[description]" id="description" required><%= gym.description %></textarea>
+                <div class="valid-feedback">
+                    Looks good!
+                </div>
+            </div>
+            <div class="mb-3">
+                <label class="form-label" for="price">Price</label>
+                <div class="input-group">
+                    <span class="input-group-text" id="price-label">£</span>
+                    <input class="form-control" type="text" name="gym[price]" id="price" 
+                        placeholder="0.00" aria-describedby="price-label" aria-label="price" value="<%= gym.price %>" required>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                </div>
+            </div>
+            <div class="mb-3">
+                <button class="btn btn-info">Update Gym</button>
+            </div>
+        </form>
+        <a href="/gyms/<%= gym.id %>">Back to Gym</a>
+    </div>
+</div>
