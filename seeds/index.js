@@ -19,6 +19,7 @@ const seedDB = async () => {
     for (let i = 0; i < 50; i++) {
         const rand1000 = Math.floor(Math.random() * 1000)
         const gym = new Gym({
+            author: '67c3b78bd40f762f953d3c5f',
             location: `${cities[rand1000].city}, ${cities[rand1000].state}`,
             title: `${randArrayChoice(descriptors)} ${randArrayChoice(places)}`,
             image: `https://picsum.photos/400?random=${Math.random()}`,
