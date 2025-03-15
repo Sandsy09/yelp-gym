@@ -42,3 +42,18 @@ module.exports.places = [
     'Cliffs',
     'Hollow'
 ]
+
+module.exports.street = [
+    'Main St',
+    '2nd St',
+    '3rd St',
+    '1st St',
+    'Oak St',
+    '4th St',
+    'Elm St',
+    'Pine St',
+    'Church St',
+    'Maple St',
+    'Walnut St',
+    '5th St'
+]

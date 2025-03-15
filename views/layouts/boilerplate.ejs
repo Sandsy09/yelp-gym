@@ -9,10 +9,14 @@
         rel="stylesheet" 
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" 
         crossorigin="anonymous">
+    <link rel="stylesheet" href="/stylesheets/stars.css">
+    <script src='https://api.mapbox.com/mapbox-gl-js/v3.10.0/mapbox-gl.js' crossorigin="anonymous"></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v3.10.0/mapbox-gl.css' rel='stylesheet' crossorigin="anonymous"/>
+    <link href='/stylesheets/app.css' rel='stylesheet' />
 </head>
 <body class="d-flex flex-column vh-100">
     <%- include('../partials/navbar') %>
-    <main class="container mt-5">
+    <main class="mt-1">
         <%- include('../partials/flash') %>
         <%- body %>
     </main>
