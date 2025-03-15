@@ -3,36 +3,36 @@
 <div id="cluster-map"></div>
 
 <div class="container mt-3">
-<h1>All Gyms</h1>
-<div>
-    <a href="/gyms/new">New Gym</a>
-</div>
+    <h1>All Gyms</h1>
+    <div>
+        <a href="/gyms/new">New Gym</a>
+    </div>
 
 
-<% for (let gym of gyms) { %>
-    <div class="card mb-3">
-        <div class="row">
-            <div class="col-md-4">
-                <% if (gym.images.length) { %>
-                    <img src="<%= gym.images[0].url %>" alt="" class="img-fluid" crossorigin="anonymous">
-                <% } else { %>
-                    <img crossorigin="anonymous" class="img-fluid"
-                        src="https://res.cloudinary.com/dxadixl1i/image/upload/v1741487214/YelpGym/n3aswtrszcye6zj1yyop.jpg">
-                <% } %>
-            </div>
-            <div class="col-md-8">
-                <div class="card-body">
-                    <h5 class="card-title"><%= gym.title %></h5>
-                    <p class="card-text"><%= gym.description %></p>
-                    <p class="card-text">
-                        <small class="text-muted"><%= gym.location %></small>
-                    </p>
-                    <a href="/gyms/<%= gym.id %>" class="btn btn-primary">View <%= gym.title %></a>
+    <% for (let gym of gyms) { %>
+        <div class="card mb-3">
+            <div class="row">
+                <div class="col-md-4">
+                    <% if (gym.images.length) { %>
+                        <img src="<%= gym.images[0].url %>" alt="" class="img-fluid" crossorigin="anonymous">
+                    <% } else { %>
+                        <img crossorigin="anonymous" class="img-fluid"
+                            src="https://res.cloudinary.com/dxadixl1i/image/upload/v1741487214/YelpGym/n3aswtrszcye6zj1yyop.jpg">
+                    <% } %>
+                </div>
+                <div class="col-md-8">
+                    <div class="card-body">
+                        <h5 class="card-title"><%= gym.title %></h5>
+                        <p class="card-text"><%= gym.description %></p>
+                        <p class="card-text">
+                            <small class="text-muted"><%= gym.location %></small>
+                        </p>
+                        <a href="/gyms/<%= gym.id %>" class="btn btn-primary">View <%= gym.title %></a>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-<% } %>
+    <% } %>
 </div>
 
 

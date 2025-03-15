@@ -14,7 +14,7 @@ const passport = require('passport');
 const LocalStrategy = require('passport-local');
 const mongoSanitize = require('express-mongo-sanitize');
 const helmet = require('helmet');
-const dbUrl = 'mongodb://localhost:27017/yelp-gym' //process.env.DB_URL
+const dbUrl = process.env.DB_URL || 'mongodb://localhost:27017/yelp-gym' //process.env.DB_URL
 
 const User = require('./models/user');
 
@@ -89,11 +89,13 @@ app.use(
     })
 );
 
+const secret = process.env.SECRET || 'thisshouldbeabettersecret!'
+
 const store = MongoStore.create({
     mongoUrl: dbUrl,
     touchAfter: 24 * 60 * 60,
     crypto: {
-        secret: 'thisshouldbeabettersecret!'
+        secret
     }
 });
 
@@ -104,7 +106,7 @@ store.on("error", function (e) {
 const sessionConfig = {
     store,
     name: 'milkchocolatechip',
-    secret: 'thisshouldbeabettersecret',
+    secret,
     resave: false,
     saveUninitialized: true,
     cookie: {
@@ -150,6 +152,9 @@ app.use((err, req, res, next) => {
     res.status(statusCode).render('error', { err })
 });
 
-app.listen(3000, () => {
-    console.log("SERVING ON PORT 3000");
+
+const port = process.env.PORT || 3000;
+
+app.listen(port, () => {
+    console.log(`SERVING ON PORT ${port}`);
 });

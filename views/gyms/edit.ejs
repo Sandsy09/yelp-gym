@@ -3,7 +3,7 @@
 <div class="row">
     <h1 class="text-center">Edit Gym</h1>
     <div class="col-6 offset-3">
-        <form class="validated-form" action="/gyms/<%= gym.id %>?_method=PUT" method="POST" 
+        <form class="row validated-form" action="/gyms/<%= gym.id %>?_method=PUT" method="POST" 
             novalidate enctype="multipart/form-data">
             <div class="mb-3">
                 <label class="form-label" for="title">Title</label>
@@ -12,9 +12,44 @@
                     Looks good!
                 </div>
             </div>
-            <div class="mb-3">
-                <label class="form-label" for="location">Location</label>
-                <input class="form-control"type="text" name="gym[location]" id="location" value="<%= gym.location %>" required>
+            <div class="col-3 mb-3">
+                <label for="AddressNumber" class="form-label">House Number</label>
+                <input type="text" class="form-control" id="AddressNumber" name="address[house_number]" value="<%= gym.address.house_number %>">
+                <div class="valid-feedback">
+                    Looks good!
+                </div>
+            </div>
+            <div class="col-9 mb-3">
+                <label for="AddressStreet" class="form-label">Street</label>
+                <input type="text" class="form-control" id="AddressStreet" name="address[street]"value="<%= gym.address.street %>">
+                <div class="valid-feedback">
+                    Looks good!
+                </div>
+            </div>
+            <div class="col-12 mb-3">
+                <label for="AddressCity" class="form-label">City</label>
+                <input type="text" class="form-control" id="AddressCity" name="address[place]" value="<%= gym.address.place %>">
+                <div class="valid-feedback">
+                    Looks good!
+                </div>
+            </div>
+            <div class="col-md-5 mb-3">
+                <label for="State" class="form-label">State</label>
+                <input type="text" class="form-control" id="State" name="address[region]" value="<%= gym.address.region %>">
+                <div class="valid-feedback">
+                    Looks good!
+                </div>
+            </div>
+            <div class="col-md-3 mb-3">
+                <label for="PostCode" class="form-label">Post Code/Zip</label>
+                <input type="text" class="form-control" id="PostCode" name="address[post_code]" value="<%= gym.address.post_code %>">
+                <div class="valid-feedback">
+                    Looks good!
+                </div>
+            </div>
+            <div class="col-md-4 mb-3">
+                <label for="Country" class="form-label">Country</label>
+                <input type="text" class="form-control" id="Country" name="address[country]" value="<%= gym.address.country %>">
                 <div class="valid-feedback">
                     Looks good!
                 </div>

@@ -1,55 +1,88 @@
 <% layout('layouts/boilerplate') %>
-<div class="row">
-    <h1 class="text-center">New Gym</h1>
-    <div class="col-6 offset-3">
-        <form class="validated-form" action="/gyms" method="POST" novalidate enctype="multipart/form-data">
-            <div class="mb-3">
-                <label class="form-label" for="title">Title</label>
-                <input class="form-control" type="text" name="gym[title]" id="title" required>
-                <div class="valid-feedback">
-                    Looks good!
-                </div>
-            </div>
-            <div class="mb-3">
-                <label class="form-label" for="location">Location</label>
-                <input class="form-control" type="text" name="gym[location]" id="location" required>
-                <div class="valid-feedback">
-                    Looks good!
-                </div>
-            </div>
-            <div class="mb-3">
-                <label for="images" class="form-label">Upload Images</label>
-                <input class="form-control" type="file" id="images" name="image" multiple>
-            </div>
-            <!-- <div class="mb-3">
-                <label class="form-label" for="image">Image URL</label>
-                <input class="form-control" type="text" name="gym[image]" id="image" required>
-                <div class="valid-feedback">
-                    Looks good!
-                </div>
-            </div> -->
-            <div class="mb-3">
-                <label class="form-label" for="description">Description</label>
-                <textarea class="form-control" type="text" name="gym[description]" id="description" required></textarea>
-                <div class="valid-feedback">
-                    Looks good!
-                </div>
-            </div>
-            <div class="mb-3">
-                <label class="form-label" for="price">Price</label>
-                <div class="input-group">
-                    <span class="input-group-text" id="price-label">£</span>
-                    <input class="form-control" type="text" name="gym[price]" id="price" 
-                        placeholder="0.00" aria-describedby="price-label" aria-label="price" required>
+
+<div class="container">
+    <div class="row">
+        <h1 class="text-center">New Gym</h1>
+        <div class="col-6 offset-3">
+            <form class="row validated-form" action="/gyms" method="POST" novalidate enctype="multipart/form-data">
+                <div class="col-12 mb-3">
+                    <label class="form-label" for="title">Title</label>
+                    <input class="form-control" type="text" name="gym[title]" id="title" required>
                     <div class="valid-feedback">
                         Looks good!
                     </div>
                 </div>
-            </div>
-            <div class="mb-3">
-                <button class="btn btn-success">Add Gym</button>
-            </div>
-        </form>
-        <a href="/gyms">All Gyms</a>
+                <div class="col-3 mb-3">
+                    <label for="AddressNumber" class="form-label">House Number</label>
+                    <input type="text" class="form-control" id="AddressNumber" name="address[house_number]" placeholder="123">
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                </div>
+                <div class="col-9 mb-3">
+                    <label for="AddressStreet" class="form-label">Street</label>
+                    <input type="text" class="form-control" id="AddressStreet" name="address[street]"placeholder="Main St.">
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                </div>
+                <div class="col-12 mb-3">
+                    <label for="AddressCity" class="form-label">City</label>
+                    <input type="text" class="form-control" id="AddressCity" name="address[place]" placeholder="Colton">
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                </div>
+                <div class="col-md-5 mb-3">
+                    <label for="State" class="form-label">State</label>
+                    <input type="text" class="form-control" id="State" name="address[region]" placeholder="California">
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                </div>
+                <div class="col-md-3 mb-3">
+                    <label for="PostCode" class="form-label">Post Code/Zip</label>
+                    <input type="text" class="form-control" id="PostCode" name="address[post_code]" placeholder="45359">
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <label for="Country" class="form-label">Country</label>
+                    <input type="text" class="form-control" id="Country" name="address[country]" placeholder="United States">
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                </div>
+                <div class="col-12 mb-3">
+                    <label for="images" class="form-label">Upload Images</label>
+                    <input class="form-control" type="file" id="images" name="image" multiple>
+                </div>
+                <div class="col-12 mb-3">
+                    <label class="form-label" for="description">Description</label>
+                    <textarea class="form-control" type="text" name="gym[description]" id="description" required></textarea>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                </div>
+                <div class="col-12 mb-3">
+                    <label class="form-label" for="price">Price</label>
+                    <div class="input-group">
+                        <span class="input-group-text" id="price-label">£</span>
+                        <input class="form-control" type="text" name="gym[price]" id="price" 
+                            placeholder="0.00" aria-describedby="price-label" aria-label="price" required>
+                        <div class="valid-feedback">
+                            Looks good!
+                        </div>
+                    </div>
+                </div>
+                <div class="mb-3 col-md-3">
+                    <button class="btn btn-success">Submit Gym</button>
+                </div>
+                <div class="ms-auto col-md-3">
+                    <a class="float-md-end btn btn-danger text-white text-decoration-none" href="/gyms">Cancel</a>
+                </div>
+            </form>
+        </div>
     </div>
 </div>
